@@ -14,4 +14,4 @@ ProductCategorySchema
 });
 
 //Export model
-module.exports = mongoose.model('ProductCategory', ProductCategorySchema);
+module.exports = mongoose.model('productcategory', ProductCategorySchema);

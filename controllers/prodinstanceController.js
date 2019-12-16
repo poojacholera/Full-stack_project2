@@ -1,8 +1,15 @@
 var ProductInstance = require('../models/productinstance');
 
 // Display list of all ProductInstance.
-exports.productinstance_list = function(req, res) {
-    res.send('NOT IMPLEMENTED: ProductInstance list');
+exports.productinstance_list = function(req, res, next) {
+    //res.send('NOT IMPLEMENTED: ProductInstance list');
+    ProductInstance.find()
+      .populate('product')
+      .exec(function(err, list_productinstances){
+        if(err){return next(err);}
+        //success, so render
+        res.render('productinstance_list',{title:'Product Instance List', productinstance_list: list_productinstances});
+      });
 };
 
 // Display detail page for a specific ProductInstance.

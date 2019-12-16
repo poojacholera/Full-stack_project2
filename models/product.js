@@ -4,7 +4,7 @@ var ProductSchema = new Schema(
   {
     name: {type: String, required: true, max: 100},
     summary: {type: String, max: 100},
-    productcategory: [{type: Schema.Types.ObjectId, ref: 'ProductCategory'}],
+    productcategory: [{type: Schema.Types.ObjectId, ref: 'productcategory'}],
   }
 );
 // Virtual for product's URL

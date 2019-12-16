@@ -7,16 +7,15 @@ function Index(props) {
     <Layout title={props.title}>
       <h1>{props.title}</h1>
       <p>Welcome to {props.title}</p>
-      <h4>Dynamic Content</h4>
+      <h4>Dashboard</h4>
       <p>The app has the following record counts:</p>
         <ul>
-          <li><em>Products: </em> {props.data.product_count}</li>!
-          <li><em>Product Stock</em></li>!{props.product_instance_count}
-          <li><em>Product Stock available</em></li>!{props.product_instance_available_count}
-          <li><em>Product category</em></li>!{props.product_category_count}
+          <li><b>Products: </b> {props.data.product_count}</li>
+          <li><b>Product Stock: </b>{props.data.product_instance_count}</li>
+          <li><b>Product Stock </b><span style={{color:'green'}}>In Stock</span><b>: </b>{props.data.product_instance_available_count}</li>
+          <li><b>Product category: </b>{props.data.product_category_count}</li>
         </ul>
     </Layout>
   );
 }
-
 module.exports = Index;

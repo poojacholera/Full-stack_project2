@@ -57,7 +57,7 @@ router.post('/productcategory/:id/update', product_category_controller.productca
 router.get('/productcategory/:id', product_category_controller.productcategory_detail);
 
 // GET request for list of all Genre.
-router.get('/productcategories', product_category_controller.productcategory_list);
+router.get('/productcategory', product_category_controller.productcategory_list);
 
 /// productINSTANCE ROUTES ///
 

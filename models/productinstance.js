@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-
+var moment = require('moment');
 var Schema = mongoose.Schema;
 
 var ProductInstanceSchema = new Schema(
@@ -16,6 +16,16 @@ ProductInstanceSchema
 .virtual('url')
 .get(function () {
   return '/catalog/productinstance/' + this._id;
+});
+ProductInstanceSchema
+.virtual('mfg_date_formatted')
+.get(function () {
+  return moment(this.mfg_date).format('MMM D, YYYY');
+});
+ProductInstanceSchema
+.virtual('exp_date_formatted')
+.get(function () {
+  return moment(this.exp_date).format('MMM D, YYYY');
 });
 //Export model
 module.exports = mongoose.model('ProductInstance', ProductInstanceSchema);

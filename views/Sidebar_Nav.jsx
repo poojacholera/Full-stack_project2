@@ -6,7 +6,7 @@ function Sidebar_Nav(){
         <ul className="sidebar-nav">
           <li><a href="/catalog">Home</a></li>
           <li><a href="/catalog/products">All Products</a></li>
-          <li><a href="/catalog/categories">All Product Categories</a></li>
+          <li><a href="/catalog/productcategory">All Product Categories</a></li>
           <li><a href="/catalog/productinstances">All Product instances</a></li>
           <hr />
           <li><a href="/catalog/productcategory/create">Create new product category</a></li>
