@@ -9,6 +9,8 @@ jspm_packages/
 .env.test
 # Optional npm cache directory
 .npm
+# Optional idea cache directory
+.idea
 # Optional eslint cache
 .eslintcache
 # parcel-bundler cache (https://parceljs.org/)

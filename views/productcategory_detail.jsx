@@ -1,35 +1,35 @@
-var React = require('react');
-var PropTypes = require('prop-types');
-import Layout from './layout';
-import TableView from './table_view';
-
+var React = require("react");
+var PropTypes = require("prop-types");
+import Layout from "./layout";
+import TableView from "./table_view";
 
 function ProductCategoryDetail(props) {
-  const prod_categorydetail_list = props.category_products;
-  let countNum = 0;
-  const prod_categorydetail_items = prod_categorydetail_list.map((prod_categorydetail)=>
-    <tr>
-      <td>{++countNum}</td>
-      <td><a href={prod_categorydetail.url}>{prod_categorydetail.name}</a></td>
-      <td>{prod_categorydetail.summary}</td>
-    </tr>
-  );
+    console.log('props: '+props);
+    let countNum = 0;
+    const categoryList = props.prod-cat-list;
+    const list_items = categoryList.map(item => (
+        <tr>
+            <td>{++countNum}</td>
+            <td>{}</td>
+        </tr>
+    ));
+
   const table_heading = (
-      <tr>
-        <th>#</th>
-        <th>product name</th>
-        <th>summary</th>
-      </tr>
+    <tr>
+      <th>category name</th>
+    </tr>
   );
   return (
     <Layout>
-      <h1>Category: <b>{props.category.name}</b></h1>
-
-      <p>The app has the following products:</p>
-        <TableView thead={table_heading}>
-            {prod_categorydetail_items}
-          </TableView>
-
+      <h1>
+        Category: <b>{props.category.name}</b>
+      </h1>
+      <p>The app has the following product categories:</p>
+      <TableView thead={table_heading}>
+        <tr>
+          <th>{props.category.name}</th>
+        </tr>
+      </TableView>
     </Layout>
   );
 }

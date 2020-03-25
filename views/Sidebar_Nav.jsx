@@ -2,7 +2,7 @@ var React = require('react');
 
 function Sidebar_Nav(){
   return(
-      <div className="col-sm-2">
+      <div className="col-sm-4">
         <ul className="sidebar-nav">
           <li><a href="/catalog">Home</a></li>
           <li><a href="/catalog/products">All Products</a></li>

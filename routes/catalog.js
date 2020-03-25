@@ -12,10 +12,11 @@ router.get('/', product_controller.index);
 
 // GET request for creating a Book. NOTE This must come before routes that display Book (uses id).
 router.get('/product/create', product_controller.product_create_get);
-
 // POST request for creating Book.
 router.post('/product/create', product_controller.product_create_post);
 
+router.get('/product/:path', product_controller.product_detail);
+//router.get('/product/:id', product_controller.product_detail);
 // GET request to delete Book.
 router.get('/product/:id/delete', product_controller.product_delete_get);
 // POST request to delete Book.
@@ -27,7 +28,6 @@ router.get('/product/:id/update', product_controller.product_update_get);
 // POST request to update Book.
 router.post('/product/:id/update', product_controller.product_update_post);
 // GET request for one Book.
-router.get('/product/:id', product_controller.product_detail);
 
 // GET request for list of all Book items.
 router.get('/products', product_controller.product_list);
@@ -54,6 +54,7 @@ router.get('/productcategory/:id/update', product_category_controller.productcat
 router.post('/productcategory/:id/update', product_category_controller.productcategory_update_post);
 
 // GET request for one Genre.
+router.get('/productcategory/:path', product_category_controller.productcategory_detail);
 router.get('/productcategory/:id', product_category_controller.productcategory_detail);
 
 // GET request for list of all Genre.
