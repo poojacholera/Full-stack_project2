@@ -6,4 +6,4 @@ Main function of the app is to project the day-to-day production based on orders
 ## Tech stack 
 
 Uses the package manager [npm](https://pip.pypa.io/en/stable/).
-MERN : Mongo DB, Express JS, React JS/ Redux and Node JS.
+MERN : Mongo DB, Express JS, React JS and Node JS.
