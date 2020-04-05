@@ -1,0 +1,15 @@
+.navMenu{
+    background-color: darkcyan;
+    color: antiquewhite;
+    font-family: Century Schoolbook L , serif;
+}
+.headerText{
+    color: antiquewhite;
+    text-decoration-color: antiquewhite;
+    font-family: Halfbred, serif;
+    font-weight: bold;
+}
+.whiteText{
+    color: antiquewhite;
+    text-decoration-color: antiquewhite;
+}
