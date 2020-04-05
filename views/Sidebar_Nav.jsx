@@ -9,6 +9,8 @@ function Sidebar_Nav(){
           <li><a href="/catalog/productcategory">All Product Categories</a></li>
           <li><a href="/catalog/productinstances">All Product instances</a></li>
           <hr />
+            <li><a href="/catalog/product/create">Create new product</a></li>
+          <hr/>
           <li><a href="/catalog/productcategory/create">Create new product category</a></li>
           <li><a href="/catalog/product/create">Create new product</a></li>
           <li><a href="/catalog/productinstance/create">Create new product instance</a></li>

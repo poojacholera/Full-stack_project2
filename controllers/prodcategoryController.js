@@ -15,24 +15,26 @@ exports.productcategory_list = function(req, res, next) {
     }
     //success, so render
     console.log("list_productcategory: "+list_productcategory);
-    res.render("productcategory_list", {
+    /*res.render("productcategory_list", {
       title: "Product Category List",
       productcategory_list: list_productcategory
-    });
+    });*/
+    res.json({productcategory_list: list_productcategory});
   });
 };
 
 // Display detail page for a specific Category.
 exports.productcategory_detail = function(req, res, next) {
   //  res.send('NOT IMPLEMENTED: product category detail: ' + req.params.id);
+  console.log("path is "+ JSON.parse(req));
   //TODO
   async.parallel(
     {
       category: function(callback) {
-        Category.findById(req.params.id).exec(callback);
+        Category.findById(req.params.path).exec(callback);
       },
       category_products: function(callback) {
-        Product.find({ productcategory: req.params.id }).exec(callback);
+        Product.find({ productcategory: req.params.path }).exec(callback);
       }
     },
     function(err, results) {

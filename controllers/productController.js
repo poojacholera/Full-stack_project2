@@ -84,10 +84,11 @@ exports.product_list = function (req, res, next) {
         }
         console.log("list:" + list_products);
         //if success, then render
-        res.render("product_list", {
+       /* res.render("product_list", {
             title: "Product List",
             product_list: list_products
-        });
+        });*/
+        res.json({product_list: list_products});
     });
 };
 // Display detail page for a specific product.
