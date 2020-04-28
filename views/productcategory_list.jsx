@@ -16,7 +16,7 @@ function ProductCategoryList(props) {
   const prod_category_items = prod_category_list.map((prod_category)=>
     <tr>
       <td>{++countNum}</td>
-      <td><a href={prod_category.productcategory}>{prod_category.productcategory}</a></td>
+      <td><a href={"productcategory/"+prod_category.productcategory}>{prod_category.productcategory}</a></td>
     </tr>
   );
   const table_heading = (

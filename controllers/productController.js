@@ -82,34 +82,51 @@ exports.product_list = function (req, res, next) {
         if (err) {
             return next(err);
         }
-        console.log("list:" + list_products);
+        //  console.log("list:" + list_products);
         //if success, then render
-       /* res.render("product_list", {
-            title: "Product List",
-            product_list: list_products
-        });*/
+        /* res.render("product_list", {
+             title: "Product List",
+             product_list: list_products
+         });*/
         res.json({product_list: list_products});
     });
 };
+exports.type_product_list = function (req, res, next) {
+    console.log("my path " + req.params.path);
+    Product
+        .find( { productname: req.params.path} )
+        .exec(function (err, list_products) {
+            if (err) {
+                return next(err);
+            }
+            console.log("list: "+list_products);
+            res.json({product_list: list_products});
+        });
+}
+
 // Display detail page for a specific product.
 exports.product_detail = function (req, res, next) {
 
-    console.log("my path " + req.params.path);
+    // console.log("my path " + req.params.path);
     async.parallel(
         {
             product: function (callback) {
 
                 Product.aggregate([
-                    { $match :
-                            { productname:req.params.path }
+                    {
+                        $match:
+                            {productname: req.params.path}
                     },
-                    {$group:
-                            {_id:   {productcategory:'$productcategory'} ,
-                                totalStock:{$sum:'$quantity'}
+                    {
+                        $group:
+                            {
+                                _id: {productcategory: '$productcategory'},
+                                totalStock: {$sum: '$quantity'}
                             }
                     },
-                    {$project:
-                            {productname:req.params.path,productcategory:'$_id.productcategory', totalStock:1}
+                    {
+                        $project:
+                            {productname: req.params.path, productcategory: '$_id.productcategory', totalStock: 1}
                     }
 
                 ]).exec(callback);
